@@ -31,6 +31,13 @@ In a real-world scenario, a researcher could use this service to determine what 
 * data/ - contains the raw data for the project
 * images/ - contains three screenshots showing proof of deployment over fly.io
 
+**Getting the code:**
+```bash
+git clone https://github.com/Gylmine/machine-learning-zoomcamp-2026.git
+cd machine-learning-zoomcamp-2026/midterm
+```
+Alternatively, use the green "Code" button on the repository page, click on "Download ZIP", extract contents, and then open the "Midterm" folder.
+
 **How to run without Docker:**
 Note: all files live in the midterm/ folder and as such all commands must be run from there.
 1. Install uv (https://docs.astral.sh/uv/).
@@ -63,7 +70,8 @@ uv run uvicorn predict:app --host 0.0.0.0 --port 9696
         * internal_combustion: the probability of the unit employing internal combustion
 
 **How to run with Docker:**
-0. model.bin, which Docker will need, is already included in the repository. If desired, it can be recreated by first running "uv run python train.py" before executing #1 below.
+Note: model.bin, which Docker will need, is already included in the repository. If desired, it can be recreated by first running "uv run python train.py" before executing #1 below.
+
 1. In terminal, enter the following commands in sequence:
     
 ```bash
@@ -72,7 +80,7 @@ docker build -t power-unit-technology .
 docker run -it --rm -p 9696:9696 power-unit-technology
 ```
 
-2. Repeat steps 3 to 7 of the procedure without Docker (see above).
+2. Repeat steps #3 to #7 of the procedure without Docker (see above).
 
 **Deployment:**
 If desired, the service may be deployed over any cloud platform including fly.io. 
@@ -92,10 +100,10 @@ The following screenshots show the service running over the cloud, although it w
 The API documentation page as hosted on fly.io:
 ![The API documentation page as hosted on fly.io](images/deployment_proof1.png)
 
-Proof of the API running after sending an example request:
-![Proof of the API running after sending an example request](images/deployment_proof2a.png)
+Proof of the service running correctly after sending an example request:
+![Proof of the service running correctly after sending an example request](images/deployment_proof2a.png)
 
-Further proof of the API running after sending another example request:
-![Further proof of the API running after sending another example request](images/deployment_proof2b.png)
+Further proof of the service running correctly after sending another example request:
+![Further proof of the service running correctly after sending another example request](images/deployment_proof2b.png)
 
 **Citation:** Global Energy Monitor, Global Oil and Gas Plant Tracker, August 2026 release.
